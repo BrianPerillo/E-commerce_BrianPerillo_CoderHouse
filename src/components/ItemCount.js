@@ -50,7 +50,7 @@ const ItemCount = (props) => {
 
             
                 <div className="col p-3">
-                    <button className="btn btn-primary" style={{width:"100%"}} onClick={()=> setQuantity(quantity+1)}>Agregar al Carrito</button>
+                    <button className="btn btn-primary" style={{width:"100%"}}>Agregar al Carrito</button>
                 </div>
 
             </div>
