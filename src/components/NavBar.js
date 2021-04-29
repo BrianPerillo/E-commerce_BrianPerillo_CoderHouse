@@ -18,7 +18,7 @@ const NavBar = (props) => {
                             <h1 hidden>Nombre E-commerce</h1>
                         
                             <div>
-                                <a href="#">
+                                <a href="">
                                     <img style={{width:"85px"}} src="https://image.freepik.com/vector-gratis/logotipo-cubo-generico_9569-169.jpg"/>
                                 </a>
                                 <span>(Logo provisorio / de muestra)</span>
@@ -30,9 +30,9 @@ const NavBar = (props) => {
                             <ul className="menu menu m-0">
                                 <li className=""> Categoría 1
                                     <ul className="pb-2">
-                                        <li className="p-1"><a href="#">Lorem</a></li>
-                                        <li className="p-1"><a href="#">Lorem</a></li>
-                                        <li className="p-1"><a href="#">Lorem</a></li>
+                                        <li className="p-1"><a href="">Lorem</a></li>
+                                        <li className="p-1"><a href="">Lorem</a></li>
+                                        <li className="p-1"><a href="">Lorem</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -40,9 +40,9 @@ const NavBar = (props) => {
                             <ul className="menu menu m-0">
                                 <li className=""> Categoría 2
                                     <ul className="pb-2">
-                                        <li className="p-1"><a href="#">Ipsum</a></li>
-                                        <li className="p-1"><a href="#">Ipsum</a></li>
-                                        <li className="p-1"><a href="#">Ipsum</a></li>
+                                        <li className="p-1"><a href="">Ipsum</a></li>
+                                        <li className="p-1"><a href="">Ipsum</a></li>
+                                        <li className="p-1"><a href="">Ipsum</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -50,9 +50,9 @@ const NavBar = (props) => {
                             <ul className="menu menu m-0">
                                 <li className=""> Categoría 3
                                     <ul className="pb-2">
-                                        <li className="p-1"><a href="#">Dolor</a></li>
-                                        <li className="p-1"><a href="#">Dolor</a></li>
-                                        <li className="p-1"><a href="#">Dolor</a></li>
+                                        <li className="p-1"><a href="">Dolor</a></li>
+                                        <li className="p-1"><a href="">Dolor</a></li>
+                                        <li className="p-1"><a href="">Dolor</a></li>
                                     </ul>
                                 </li>
                             </ul>
