@@ -22,6 +22,10 @@ const ItemCount = (props) => {
         }
     }
 
+    function onAdd(){
+        window.alert("Cantidad seleccionada: " + quantity)
+    }
+
     return ( 
 
         <Fragment>
@@ -50,7 +54,7 @@ const ItemCount = (props) => {
 
             
                 <div className="col p-3">
-                    <button className="btn btn-primary" style={{width:"100%"}}>Agregar al Carrito</button>
+                    <button className="btn btn-primary" style={{width:"100%"}} onClick={onAdd}>Agregar al Carrito</button>
                 </div>
 
             </div>

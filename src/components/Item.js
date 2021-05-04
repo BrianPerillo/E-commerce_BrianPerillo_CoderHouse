@@ -6,7 +6,7 @@ const Item = (props) => {
 
         <Fragment>
 
-                
+        
         <div class="product-card">
 
             <div class="badge">

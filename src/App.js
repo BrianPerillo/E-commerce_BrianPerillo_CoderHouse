@@ -2,6 +2,7 @@ import './styles/main.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
 
@@ -40,6 +41,10 @@ function App() {
 
           <div id="index_container" className="container">
             <ItemCount stock={stock}/>
+          </div>
+
+          <div id="index_container" className="container">
+            <ItemDetailContainer items={items}/>
           </div>
 
     </div>
