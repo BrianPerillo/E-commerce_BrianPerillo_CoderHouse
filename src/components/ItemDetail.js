@@ -14,7 +14,7 @@ const ItemDetail = (props) => {
                 <div className="row">
 
                     <div>
-                        <img src={props.item.img} />
+                        <img src={props.item.img} style={{width:"150px"}}/>
                     </div>
 
                     <div className="col ml-3">

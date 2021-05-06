@@ -1,14 +1,17 @@
 import React, {Fragment, useEffect, useState} from 'react'
-
+import {Link, NavLink, useParams} from 'react-router-dom';
 import Item from './Item';
+
 
 const ItemListContainer = (props) => {
 
     const [items, setItems] = useState([]);
     const [trajoDatos, setTrajoDatos] = useState(false);
-    
-    useEffect(() => {
+    const [category, setCategory] = useState();
+    const [category_id, setCategory_id] = useState();
+    const {id} = useParams();
 
+    useEffect(() => {
         let pedidoItems = new Promise((resolve, reject)=>{
 
             setTimeout(()=> {
@@ -22,7 +25,19 @@ const ItemListContainer = (props) => {
                 setItems(items);
                 setTrajoDatos(true);
             })
-        
+
+            id ?
+                setCategory(true)
+               
+            :
+                setCategory(false)
+
+            id ? 
+                setCategory_id(id)
+            : 
+                setCategory(false)
+
+
         }, [])
 
     return ( 
@@ -32,17 +47,26 @@ const ItemListContainer = (props) => {
             <div>
         
                 {   
-                    trajoDatos ?
+                    trajoDatos && category == false ?
                     
                         items.map((item) => 
                             <div className="float-left">
-                                <Item item={item}/>
+                                <NavLink to={`/item/${item.id}`}><Item item={item}/></NavLink>
                             </div>
                         )
 
                     :
 
-                    'Loading products...'
+                        items.map((item) => 
+                            item.category == id ?
+                                <div className="float-left">
+                                    <NavLink to={`/item/${item.id}`}><Item item={item}/></NavLink>
+                                </div>
+                            :
+                                <div className="float-left">
+                                
+                                </div>
+                        )
 
 
                 }

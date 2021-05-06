@@ -1,5 +1,6 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
 import CardWidget from './CardWidget';
+import {Link, NavLink} from 'react-router-dom';
 
 const NavBar = (props) => {
     
@@ -19,7 +20,7 @@ const NavBar = (props) => {
                         
                             <div>
                                 <a href="">
-                                    <img style={{width:"85px"}} src="https://image.freepik.com/vector-gratis/logotipo-cubo-generico_9569-169.jpg"/>
+                                    <Link to={'/'}><img style={{width:"85px"}} src="https://image.freepik.com/vector-gratis/logotipo-cubo-generico_9569-169.jpg"/></Link>
                                 </a>
                                 <span>(Logo provisorio / de muestra)</span>
                             </div>
@@ -28,23 +29,23 @@ const NavBar = (props) => {
                         <div id="categorias" className="col-md-6">
 
                             <ul className="menu menu m-0">
-                                <li className=""> Categoría 1
+                            <NavLink to={`/category/1`}><li className="">Zapatillas
                                     <ul className="pb-2">
                                         <li className="p-1"><a href="">Lorem</a></li>
                                         <li className="p-1"><a href="">Lorem</a></li>
                                         <li className="p-1"><a href="">Lorem</a></li>
                                     </ul>
-                                </li>
+                                </li></NavLink>
                             </ul>
 
                             <ul className="menu menu m-0">
-                                <li className=""> Categoría 2
+                            <NavLink to={`/category/2`}><li className=""> Remeras
                                     <ul className="pb-2">
                                         <li className="p-1"><a href="">Ipsum</a></li>
                                         <li className="p-1"><a href="">Ipsum</a></li>
                                         <li className="p-1"><a href="">Ipsum</a></li>
                                     </ul>
-                                </li>
+                                </li></NavLink>
                             </ul>
 
                             <ul className="menu menu m-0">
