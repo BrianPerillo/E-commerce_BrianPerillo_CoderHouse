@@ -1,8 +1,14 @@
 import React, {Fragment, useState ,useEffect} from 'react';
-
+import ItemCount from './ItemCount'
 
 const ItemDetail = (props) => {
-    
+
+    const [quantityToAdd, setQuantityToAdd] = useState(0);
+
+    function onAdd(quantity){
+        setQuantityToAdd(quantity);
+        console.log("Cantidad desde el detail: " + quantityToAdd);
+    }
 
     return ( 
 
@@ -27,8 +33,26 @@ const ItemDetail = (props) => {
                     </div>
 
                 </div>
+                
+                {
+                    quantityToAdd == 0 ?
+
+                        <div style={{width:"35%"}}>
+                            {/* Cargo el ItemCount (hijo de este comp) y además: */}
+                            {/* le paso función onAdd al hijo ItemCount, para tener el dato de quantity en este Comp padre */}
+                            <ItemCount stock={props.item.stock} onAdd={onAdd}/>  
+                        </div>
+
+                    :
+
+                    <div className="mt-5" style={{width:"35%"}}>
+                            <a href="/cart" className="btn btn-success" style={{width:"100%"}}>Terminar Compra</a>
+                    </div>
+
+                }
+                
+
             </div>
-            
 
         </Fragment>
 

@@ -3,7 +3,6 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import React from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
 
@@ -17,6 +16,7 @@ function App() {
       img: 'https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/faae2c37ab1d315e4b697a7f62b421b7/z/a/zapatilla-adidas-duramo-sl-mujer-negra-100010fv8794001-1.jpg',
       marca:'Adidas',
       description:'Altas llantas Lorem Ipsum Dolor',
+      stock: 10,
       price: 12500
     },
     {
@@ -26,6 +26,7 @@ function App() {
       img: 'https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dweb98be6a/products/NI_AQ7481-002/NI_AQ7481-002-1.JPG',
       marca:'Nike',
       description:'Altas llantas pero de otra marca',
+      stock: 10,
       price: 11250
     },
     {
@@ -35,11 +36,10 @@ function App() {
       img: 'https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw4b28ff42/products/NI_BV3815-010/NI_BV3815-010-1.JPG',
       marca:'Nike',
       description:'La nueva Remera Nike Top SS Glam, está diseñada con ...',
+      stock: 10,
       price: 3.199
     }
   ]
-
-  let stock = 10;
 
   return (
 
@@ -57,6 +57,10 @@ function App() {
 
       </div>
     </Route>
+
+    <Route path="/cart">
+        <p className="p-5">Work in progress...</p>
+    </Route>
     
     <Route path="/category/:id">
       <NavBar/>
@@ -71,8 +75,6 @@ function App() {
 
       <div id="index_container" className="container">
         <ItemDetailContainer items={items}/>
-      
-        <ItemCount stock={stock}/>
       </div>
     </Route>
 

@@ -6,7 +6,7 @@ const ItemCount = (props) => {
 
     useEffect(() => {
         
-      console.log("Cmabio realizado");
+      console.log("Cambio realizado");
 
     }, [quantity])
 
@@ -22,15 +22,15 @@ const ItemCount = (props) => {
         }
     }
 
-    function onAdd(){
-        window.alert("Cantidad seleccionada: " + quantity)
+    const handleOnClick = (e) => {
+        props.onAdd(quantity);
     }
+
 
     return ( 
 
         <Fragment>
 
-            <div style={{width:"35%"}}>
 
                 <div id="item_count" className="row">
 
@@ -54,10 +54,9 @@ const ItemCount = (props) => {
 
             
                 <div className="col p-3">
-                    <button className="btn btn-primary" style={{width:"100%"}} onClick={onAdd}>Agregar al Carrito</button>
+                    <button className="btn btn-primary" style={{width:"100%"}} onClick={handleOnClick}>Agregar al Carrito</button>
                 </div>
 
-            </div>
 
         </Fragment>
 
