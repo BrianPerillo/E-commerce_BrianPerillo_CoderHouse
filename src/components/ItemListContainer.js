@@ -1,7 +1,6 @@
-import React, {Fragment, useEffect, useState} from 'react'
+import React, {Fragment, useEffect, useState, useContext} from 'react'
 import {Link, NavLink, useParams} from 'react-router-dom';
 import Item from './Item';
-
 
 const ItemListContainer = (props) => {
 
@@ -12,6 +11,7 @@ const ItemListContainer = (props) => {
     const {id} = useParams();
 
     useEffect(() => {
+
         let pedidoItems = new Promise((resolve, reject)=>{
 
             setTimeout(()=> {
@@ -70,6 +70,10 @@ const ItemListContainer = (props) => {
 
 
                 }
+
+           </div>
+
+           <div>
 
            </div>
 

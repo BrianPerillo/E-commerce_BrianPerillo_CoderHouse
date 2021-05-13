@@ -4,7 +4,7 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-
+import {CartProvider} from './context/CartContext';
 
 function App() {
 
@@ -47,37 +47,42 @@ function App() {
 
     <Switch>
 
-    <Route exact path="/">
-      <div className="">
-          <NavBar/>
+      <CartProvider>
+        <Route exact path="/">
+          <div className="">
+              <NavBar/>
 
-          <div id="index_container" className="container">
-            <ItemListContainer items={items}/>
+              <div id="index_container" className="container">
+                  <ItemListContainer items={items}/>
+              </div>
+
           </div>
-
-      </div>
-    </Route>
-
-    <Route path="/cart">
-        <p className="p-5">Work in progress...</p>
-    </Route>
+        </Route>
     
-    <Route path="/category/:id">
-      <NavBar/>
 
-      <div id="index_container" className="container">
-        <ItemListContainer items={items}/>
-      </div>
-    </Route>
+      <Route path="/cart">
+          <p className="p-5">Work in progress...</p>
+      </Route>
+      
+      <Route path="/category/:id">
+        <NavBar/>
 
-    <Route path="/item/:id">
-      <NavBar/>
+        <div id="index_container" className="container">
+          <ItemListContainer items={items}/>
+        </div>
+      </Route>
 
-      <div id="index_container" className="container">
-        <ItemDetailContainer items={items}/>
-      </div>
-    </Route>
+      <Route path="/item/:id">
+        <NavBar/>
 
+        <div id="index_container" className="container">
+          
+            <ItemDetailContainer items={items}/>
+
+        </div>
+      </Route>
+    </CartProvider>
+    
     </Switch>
 
     </BrowserRouter>

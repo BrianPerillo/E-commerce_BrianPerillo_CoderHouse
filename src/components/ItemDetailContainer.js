@@ -1,6 +1,5 @@
 import React, {Fragment, useState ,useEffect} from 'react';
 import {useParams} from "react-router-dom";
-
 import Item from './Item';
 import ItemDetail from './ItemDetail';
 

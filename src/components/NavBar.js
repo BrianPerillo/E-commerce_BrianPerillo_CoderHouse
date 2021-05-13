@@ -67,7 +67,6 @@ const NavBar = (props) => {
                     </nav>
                 </div>
                 
-
             </header>
 
         </Fragment>

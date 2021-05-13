@@ -23,7 +23,7 @@ const ItemCount = (props) => {
     }
 
     const handleOnClick = (e) => {
-        props.onAdd(quantity);
+        props.onAdd(quantity, props.item);
     }
 
 
