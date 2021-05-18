@@ -2,9 +2,11 @@ import './styles/main.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import React from 'react';
 import NavBar from './components/NavBar';
+import Cart from './components/Cart';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import {CartProvider} from './context/CartContext';
+
 
 function App() {
 
@@ -37,7 +39,7 @@ function App() {
       marca:'Nike',
       description:'La nueva Remera Nike Top SS Glam, está diseñada con ...',
       stock: 10,
-      price: 3.199
+      price: 3199
     }
   ]
 
@@ -61,7 +63,8 @@ function App() {
     
 
       <Route path="/cart">
-          <p className="p-5">Work in progress...</p>
+          <NavBar/>
+          <Cart/>
       </Route>
       
       <Route path="/category/:id">

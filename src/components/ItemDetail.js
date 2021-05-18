@@ -1,6 +1,7 @@
 import React, {Fragment, useState ,useEffect, useContext} from 'react';
 import ItemCount from './ItemCount'
 import {CartContext} from '../context/CartContext';
+import {Link, NavLink} from 'react-router-dom';
 
 const ItemDetail = (props) => {
 
@@ -17,9 +18,9 @@ const ItemDetail = (props) => {
     
     console.log('cartcontext => ' + cartContext);
 
-    const handleOnClickRemove = (e) => {
-        cartContext.removeFromCart(props.item.id)
-    }
+    // const handleOnClickRemove = (e) => {
+    //     cartContext.removeFromCart(props.item.id)
+    // }
 
 
     return ( 
@@ -57,16 +58,17 @@ const ItemDetail = (props) => {
 
                     :
 
-                    <div className="mt-5" style={{width:"35%"}}>
-                        <a href="/cart" className="btn btn-success" style={{width:"100%"}}>Terminar Compra</a>
-                        <button href="/cart" className="btn btn-danger" onClick={handleOnClickRemove} style={{width:"100%"}}>Eliminar del Carrito</button>
-                    </div>
+                        <div className="mt-5" style={{width:"35%"}}>
+                            <NavLink to='/cart'><a className="btn btn-success" style={{width:"100%"}}>Terminar Compra</a></NavLink>
+                            {/* <button href="/cart" className="btn btn-danger" onClick={handleOnClickRemove} style={{width:"100%"}}>Eliminar del Carrito</button> */}
+                        </div>
                                
                                     
                 }
                 
                 {
-                    cartContext.cart.map((item) => <p>items carrito =  {item.model} cantidad =  {cartContext.quantity}</p> )
+                    // cartContext.cart.map((item) => <p>items carrito =  {item.model} cantidad =  {cartContext.quantity}</p> )
+                    
                 }
 
             </div>

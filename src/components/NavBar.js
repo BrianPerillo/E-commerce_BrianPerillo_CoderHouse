@@ -1,10 +1,8 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useContext} from 'react';
 import CardWidget from './CardWidget';
 import {Link, NavLink} from 'react-router-dom';
 
 const NavBar = (props) => {
-    
-
 
     return ( 
 
@@ -60,8 +58,10 @@ const NavBar = (props) => {
                         
                         </div>
 
-                        <div id="cart" className="col-md-2">
-                            <CardWidget/>
+                        <div id="cart" className="col-md-2"> 
+                            <NavLink to={`/cart`}>
+                                <CardWidget/>
+                            </NavLink>
                         </div>
 
                     </nav>

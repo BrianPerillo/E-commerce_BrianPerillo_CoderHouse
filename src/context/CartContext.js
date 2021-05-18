@@ -8,8 +8,8 @@ export const CartProvider = ({children}) => {  //Creo proveedor que recive datos
   const [cart, setCart] = useState([])
   const [quantity, setQuantity] = useState(0)
 
-  const addCart = (quantity, item) => {
-    setQuantity(quantity);
+  const addCart = (quantity_recibida, item) => {
+    item.quantity = quantity_recibida;
     setCart([...cart, item]) 
     console.log("carrito " + cart)
   }
@@ -17,8 +17,7 @@ export const CartProvider = ({children}) => {  //Creo proveedor que recive datos
   const removeFromCart = (itemId) => {
     const newCart = cart.filter((item) => item.id !== itemId)
     setCart(newCart)
-    setQuantity(quantity-quantity);
-    console.log("carrito " + cart)
+    console.log("id_recibido" + itemId)
   }
 
   return (
