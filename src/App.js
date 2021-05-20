@@ -1,47 +1,50 @@
 import './styles/main.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import NavBar from './components/NavBar';
 import Cart from './components/Cart';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import {CartProvider} from './context/CartContext';
-
+import {db} from './firebase';
 
 function App() {
 
-  const items = [
-    {
-      id: 1,
-      category: 1,
-      model:'Adidas Duramo',
-      img: 'https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/faae2c37ab1d315e4b697a7f62b421b7/z/a/zapatilla-adidas-duramo-sl-mujer-negra-100010fv8794001-1.jpg',
-      marca:'Adidas',
-      description:'Altas llantas Lorem Ipsum Dolor',
-      stock: 10,
-      price: 12500
-    },
-    {
-      id: 2,
-      category: 1,
-      model:'Nike Downshifter 9',
-      img: 'https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dweb98be6a/products/NI_AQ7481-002/NI_AQ7481-002-1.JPG',
-      marca:'Nike',
-      description:'Altas llantas pero de otra marca',
-      stock: 10,
-      price: 11250
-    },
-    {
-      id: 3,
-      category: 2,
-      model:'Remera Nike Glam',
-      img: 'https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw4b28ff42/products/NI_BV3815-010/NI_BV3815-010-1.JPG',
-      marca:'Nike',
-      description:'La nueva Remera Nike Top SS Glam, está diseñada con ...',
-      stock: 10,
-      price: 3199
-    }
-  ]
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState()
+
+  // useEffect(() => {
+
+  //   setLoading(true);
+  //   const db = getFirestore()
+  //   const itemCollection = db.collection('items')
+  //   itemCollection.get().then((querySnapshot) => {
+  //     if(querySnapshot.size === 0){
+  //       console.log("No Results!")
+  //     }
+  //     setItems(querySnapshot.docs.map((doc) => doc.data()))
+  //     }).catch((error) => {
+  //       console.log("Error searching items", error)
+  //     }).fuinally(() => {
+  //       setLoading(false)
+  //     })
+
+  // }, []);
+
+  const getItems = async () => {
+
+   db.collection('items').onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      setItems([...items, doc.data()])
+    });
+
+   });
+
+  }
+
+  useEffect(() => {
+    getItems();
+  }, []);
 
   return (
 

@@ -58,7 +58,7 @@ const ItemListContainer = (props) => {
                     :
 
                         items.map((item) => 
-                            item.category == id ?
+                            item.category_id == id ?
                                 <div className="float-left">
                                     <NavLink to={`/item/${item.id}`}><Item item={item}/></NavLink>
                                 </div>
