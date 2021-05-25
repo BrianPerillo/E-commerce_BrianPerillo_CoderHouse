@@ -17,10 +17,11 @@ const ItemListContainer = (props) => {
             setTimeout(()=> {
                 const items = props.items
                 resolve(items) 
-            },2000)
+            },0)
             
             })
             .then((items)=>{
+                console.log("items desde list container:");
                 console.log(items);
                 setItems(items);
                 setTrajoDatos(true);

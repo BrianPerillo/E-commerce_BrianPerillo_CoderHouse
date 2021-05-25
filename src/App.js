@@ -11,7 +11,26 @@ import {db} from './firebase';
 function App() {
 
   const [items, setItems] = useState([])
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(true)
+
+  const items2 = [
+    {
+      "id":1,
+      "model":"xxx",
+      "description":"xxx",
+      "price":1500,
+      "stock":10,
+      "img":"xxx"
+    },
+    {
+      "id":2,
+      "model":"aaa",
+      "description":"aaa",
+      "price":33,
+      "stock":33,
+      "img":"aaa"
+    }
+  ] 
 
   // useEffect(() => {
 
@@ -35,12 +54,13 @@ function App() {
 
    db.collection('items').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      setItems([...items, doc.data()])
+      var item = doc.data()
+      setItems((items) => items.concat(item))
     });
-
+    setLoading(false)
    });
-
-  }
+   
+  } 
 
   useEffect(() => {
     getItems();
@@ -58,7 +78,14 @@ function App() {
               <NavBar/>
 
               <div id="index_container" className="container">
-                  <ItemListContainer items={items}/>
+               {console.log("items: ")} 
+               {console.log(items)}
+               {
+                !loading ? 
+                    <ItemListContainer items={items}/>
+                :
+                "cargando"
+               }
               </div>
 
           </div>

@@ -6,14 +6,15 @@ import ItemDetail from './ItemDetail';
 const ItemDetailContainer = (props) => {
     
     const [item, setItem] = useState([]);
+    const [items, setitems] = useState([])
     const [trajoDatos, setTrajoDatos] = useState(true);
     const {id} = useParams();
 
     const getItems = new Promise((resolve, reject)=>{
         setTimeout(()=> {
-            const items = props.items
+            setitems(props.items)
             resolve(items) 
-        },2000)
+        },0)
         
         })
         .then((items)=>{
@@ -40,7 +41,9 @@ const ItemDetailContainer = (props) => {
 
 
         <Fragment>
-            
+
+            {console.log("items desde detail container: ")}
+            {console.log(items)}
             <ItemDetail item={item}/>
 
         </Fragment>

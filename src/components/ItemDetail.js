@@ -29,7 +29,7 @@ const ItemDetail = (props) => {
         <Fragment>
             
             <div className="container">
-                <h2>Prueba de vista detalle:</h2>
+
                 <div className="row">
 
                     <div>
