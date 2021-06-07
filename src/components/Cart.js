@@ -86,7 +86,7 @@ const Cart = () => {
         
         <Fragment>
             
-            <div className="container mt-5 d-flex justify-content-center">
+            <div className="mt-5 d-flex justify-content-center">
             {       cartContext.cart[0] == null ?
 
                     <p>Aún no hay items en el carrito</p>
@@ -95,7 +95,7 @@ const Cart = () => {
 
                     <div className="col">
                     
-                    <table id="cart_table" className="col">
+                    <table id="cart_table" className="col-md-6" style={{margin:'auto'}}>
                         
                         <tr>
                             <th>Producto</th>
@@ -136,44 +136,52 @@ const Cart = () => {
 
                     </table>
 
-                    <p className="mt-5">
-                            Cantidad de items = {total_quantity}
-                        </p>
+                    <div className="mt-5 col-md-6" style={{margin:'auto'}}>
 
-                        <p>
-                            Precio Total = {total_price} 
-                        </p>
+                        <p className="mt-5">
+                                Cantidad de items = {total_quantity}
+                            </p>
 
-                        <button className="btn btn-primary ml-2" onClick={finalizarCompra}>Finalizar Compra</button>
+                            <p>
+                                Precio Total = {total_price} 
+                            </p>
 
-                        { 
+                            <button className="btn btn-primary ml-2" onClick={finalizarCompra}>Finalizar Compra</button>
 
-                            finalizarCompraBool ?
+                    </div>
 
-                            <div className="col-md-2 text-center" style={{margin:"0 auto"}}>
-                                <form className="mt-5 form-group" onSubmit={handleSubmit}>
+                            { 
 
-                                    <label>Name</label><br></br>
-                                    <input className="form-control" value={userName} name="name" type="text" onChange={handleNameChange}></input><br></br>
+                                finalizarCompraBool ?
 
-                                    <label>Phone</label><br></br>
-                                    <input className="form-control" value={userPhone} name="phone" type="tel" onChange={handlePhoneChange}></input><br></br>
+                                <div className="col mt-5" style={{background:'rgb(211, 211, 211, 0.2)', height:'50vh'}}>
+                                    <div className="col-md-6 col-lg-6 col-xl-3 text-center p-3" style={{margin:"0 auto"}}>
+                                        <form className="mt-5 form-group" onSubmit={handleSubmit}>
 
-                                    <label>Email</label><br></br>
-                                    <input className="form-control" value={userEmail} name="email" type="email" onChange={handleEmailChange}></input><br></br>
+                                            <label>Name</label><br></br>
+                                            <input className="form-control" value={userName} name="name" type="text" onChange={handleNameChange}></input><br></br>
 
-                                    <button className="btn btn-success mt-2" type="submit">Comprar</button>
+                                            <label>Phone</label><br></br>
+                                            <input className="form-control" value={userPhone} name="phone" type="tel" onChange={handlePhoneChange}></input><br></br>
+
+                                            <label>Email</label><br></br>
+                                            <input className="form-control" value={userEmail} name="email" type="email" onChange={handleEmailChange}></input><br></br>
+
+                                            <button className="btn btn-success mt-2" type="submit">Comprar</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            
+                            : 
+
+                                <form>
 
                                 </form>
-                            </div>
-                        
-                        : 
 
-                            <form>
-
-                            </form>
-
-                        }
+                            }
+                            
+                    
 
                     </div>  
                 
