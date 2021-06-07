@@ -86,25 +86,57 @@ const Cart = () => {
         
         <Fragment>
             
-            <div>
+            <div className="container mt-5 d-flex justify-content-center">
             {       cartContext.cart[0] == null ?
 
                     <p>Aún no hay items en el carrito</p>
                     
                     :
+
+                    <div className="col">
                     
-                    <div>
+                    <table id="cart_table" className="col">
+                        
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Eliminar Producto</th>
+                        </tr>
+                   
                         {
                             cartContext.cart.map((item) => 
-                                <div className="row m-3">
-                                    <img src={item.img} style={{width:"100px"}}/>
-                                    <p>Producto: {item.model} - cantidad: {item.quantity} - precio: {item.price * item.quantity}</p>
-                                    <button value={item.id} className="btn btn-danger m-2" onClick={handleOnClickRemove} style={{width:"10%", height:"10%"}}>Eliminar del Carrito</button>
-                                </div>
+                            
+                                <tr className="cart_item"> 
+
+                                    <td className="col-md-3">
+                                        <img src={item.img} style={{width:"100px"}}/>
+                                        <p>{item.model}</p>
+                                    </td>
+
+                                    <td className="col-md-3">
+                                        <p>{item.quantity}</p>
+                                    </td>                                   
+
+                                    <td className="col-md-3">
+                                        <p>{item.price * item.quantity}</p>
+                                    </td> 
+                                    
+                                    <td className="col-md-3">
+                                        <button value={item.id} className="btn btn-danger m-2" onClick={handleOnClickRemove}>Eliminar del Carrito</button>
+                                    </td> 
+                                    <hr></hr>
+                                </tr>
+
+                                
+
+                             
                             )
                         }
 
-                        <p className="mt-5">
+                    </table>
+
+                    <p className="mt-5">
                             Cantidad de items = {total_quantity}
                         </p>
 
@@ -112,43 +144,40 @@ const Cart = () => {
                             Precio Total = {total_price} 
                         </p>
 
-                    <button className="btn btn-primary ml-2" onClick={finalizarCompra}>Finalizar Compra</button>
+                        <button className="btn btn-primary ml-2" onClick={finalizarCompra}>Finalizar Compra</button>
 
-                   { 
+                        { 
 
-                        finalizarCompraBool ?
+                            finalizarCompraBool ?
 
-                        <div className="col-md-2 text-center" style={{margin:"0 auto"}}>
-                            <form className="mt-5 form-group" onSubmit={handleSubmit}>
+                            <div className="col-md-2 text-center" style={{margin:"0 auto"}}>
+                                <form className="mt-5 form-group" onSubmit={handleSubmit}>
 
-                                <label>Name</label><br></br>
-                                <input className="form-control" value={userName} name="name" type="text" onChange={handleNameChange}></input><br></br>
+                                    <label>Name</label><br></br>
+                                    <input className="form-control" value={userName} name="name" type="text" onChange={handleNameChange}></input><br></br>
 
-                                <label>Phone</label><br></br>
-                                <input className="form-control" value={userPhone} name="phone" type="tel" onChange={handlePhoneChange}></input><br></br>
+                                    <label>Phone</label><br></br>
+                                    <input className="form-control" value={userPhone} name="phone" type="tel" onChange={handlePhoneChange}></input><br></br>
 
-                                <label>Email</label><br></br>
-                                <input className="form-control" value={userEmail} name="email" type="email" onChange={handleEmailChange}></input><br></br>
+                                    <label>Email</label><br></br>
+                                    <input className="form-control" value={userEmail} name="email" type="email" onChange={handleEmailChange}></input><br></br>
 
-                                <button className="btn btn-success mt-2" type="submit">Comprar</button>
+                                    <button className="btn btn-success mt-2" type="submit">Comprar</button>
+
+                                </form>
+                            </div>
+                        
+                        : 
+
+                            <form>
 
                             </form>
-                        </div>
-                    
-                    : 
 
-                        <form>
+                        }
 
-                        </form>
-
-                    }
-
-                    </div>
-                    
+                    </div>  
                 
             }
-
-               
 
             </div>
         </Fragment>

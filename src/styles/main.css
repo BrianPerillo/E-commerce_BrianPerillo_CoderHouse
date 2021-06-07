@@ -299,3 +299,38 @@ header nav div .menu li ul li a:hover {
 #contenedor_imagen img{
   width:100%
 }
+
+/* VIEW CART */
+
+#cart_table tr{
+
+  height: 70px;
+  text-align: center;
+  border-bottom: 1px solid rgb(211, 211, 211);
+
+}
+
+#cart_table tr td{
+
+  padding: 20px;
+
+}
+
+#cart_table th{
+
+  text-align: center;
+
+}
+
+.cart_item {
+  position: relative;
+  border-radius: 10px;
+}
+
+
+
+.cart_item button{
+
+
+
+}
