@@ -1,4 +1,5 @@
-import React, {Fragment, useContext, useState, useEffect} from 'react';
+import React, {Fragment, useContext, useEffect, useState} from 'react';
+
 import {CartContext} from '../context/CartContext';
 import {db} from '../firebase';
 
@@ -16,6 +17,7 @@ const Cart = () => {
     const [orderId, setOrderId] = useState()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
+    const [cart, setCart] = useState(cartContext.cart)
 
     useEffect(() => {
         cartContext.cart.map((item) => {

@@ -1,4 +1,5 @@
 import React, {Fragment, useContext} from 'react';
+
 import {CartContext} from '../context/CartContext';
 
 const CardWidget = () => {
