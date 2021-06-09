@@ -6,10 +6,11 @@ import {db} from '../firebase';
 
 const Order = (props) => {
 
-    const [order, setOrder] = useState();
+
 
     useEffect(() => {
 
+        console.log("ORDER ORDER ORDER" + props.order);
 
     }, [])
 

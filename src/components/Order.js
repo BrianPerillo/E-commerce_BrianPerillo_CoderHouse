@@ -11,27 +11,32 @@ const Order = (props) => {
     const [order, setOrder] = useState();
     const [loading, setLoading] = useState(true)
 
+    const getOrder = async () => {
+
+            db.collection('orders').onSnapshot((querySnapshot) => {
+                    
+                querySnapshot.forEach((doc) => {
+
+                if(doc.id == 'BBQrlZ0x0aOgOXoGa9IT' ){
+                    console.log("HOLA");
+                    console.log(doc.data().order);
+                    setOrder(doc.data().order)
+                    console.log("ORDERN SETEADA" + order);
+                    console.log("ORDERN SETEADA" + doc.data());
+                }
+
+            }); 
+
+        setLoading(false)
+        
+        });
+        
+    } 
+
     useEffect(() => {
-        console.log("HOLA");
-       
-        db.collection('orders').onSnapshot((querySnapshot) => {
-                
-            querySnapshot.forEach((doc) => {
 
-            if(doc.id == 'BQbW4C7dyhFZoLARUkpH' ){
-                console.log("HOLA");
-                console.log(doc.data().order);
-                setOrder(doc.data().order)
-                console.log("ORDERN SETEADA" + order);
-                console.log("ORDERN SETEADA" + doc.data());
-            }
-
-             
-        }); 
-    
-    });
-
-    setLoading(false)
+        getOrder()
+   
 
     }, [])
 
