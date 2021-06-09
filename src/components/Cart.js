@@ -188,7 +188,7 @@ const Cart = () => {
                     <div>
                         <p>Aún no hay items en el carrito</p>
                         <div className="mt-5">
-                            <p>El ID de tu última compra es:</p>
+                            <p>ID de tu última compra:</p>
                             <p>{lastOrderId}</p>
                         </div>
                     </div>

@@ -1,11 +1,13 @@
 import './styles/main.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import {React, useState, useEffect} from 'react';
-import NavBar from './components/NavBar';
+
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {React, useEffect, useState} from 'react';
+
 import Cart from './components/Cart';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
 import {CartProvider} from './context/CartContext';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar';
 import {db} from './firebase';
 
 function App() {
@@ -114,6 +116,7 @@ function App() {
 
         </div>
       </Route>
+
     </CartProvider>
     
     </Switch>

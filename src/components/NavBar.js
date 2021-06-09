@@ -47,15 +47,7 @@ const NavBar = (props) => {
                                 </li></NavLink>
                             </ul>
 
-                            <ul className="menu menu m-0">
-                                <li className=""> Categoría 3
-                                    <ul className="pb-2">
-                                        <li className="p-1"><a href="">Dolor</a></li>
-                                        <li className="p-1"><a href="">Dolor</a></li>
-                                        <li className="p-1"><a href="">Dolor</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+
                         
                         </div>
 
