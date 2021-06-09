@@ -16,7 +16,7 @@ const CardWidget = () => {
                     <div style={{width:'20px',height:'20px',background:'red', color:'white',borderRadius:'60px'}}>{cartContext.cart.length}</div>
                 </div> 
             </a>  
-
+            
         </Fragment>
 
      );

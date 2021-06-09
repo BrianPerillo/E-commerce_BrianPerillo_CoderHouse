@@ -1,6 +1,7 @@
-import React, {Fragment, useContext} from 'react';
-import CardWidget from './CardWidget';
 import {Link, NavLink} from 'react-router-dom';
+import React, {Fragment, useContext} from 'react';
+
+import CardWidget from './CardWidget';
 
 const NavBar = (props) => {
 
@@ -20,7 +21,7 @@ const NavBar = (props) => {
                                 <a href="">
                                     <Link to={'/'}><img style={{width:"85px"}} src="https://image.freepik.com/vector-gratis/logotipo-cubo-generico_9569-169.jpg"/></Link>
                                 </a>
-                                <span>(Logo provisorio / de muestra)</span>
+                                <span></span>
                             </div>
                         </div>
 
