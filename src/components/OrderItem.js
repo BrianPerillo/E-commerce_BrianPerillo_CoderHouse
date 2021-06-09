@@ -23,11 +23,12 @@ const Order = (props) => {
             .then((order)=>{
                 setOrder(order);
                 setTrajoDatos(true);
-               
+                console.log(trajoDatos);
             })
 
         console.log("ORDER ORDER ORDER PROP" + props.order[0].model);
-        console.log("ORDER ORDER ORDER SETEADO" + order);
+        console.log("ORDER ORDER ORDER SETEADO" );
+        order.map((item) => console.log("www" + item.model));
 
     }, [])
 
@@ -41,16 +42,21 @@ const Order = (props) => {
                     
                         
                             <div className="float-left">
-                               
+                               <p>ssss</p>
                             </div>
                     
 
                     :
 
-                        order.map((item) =>  {
+                    order.map((item) => 
 
-                            <p>ssss</p>
-                        })
+                        <div>
+                            <p>Producto: {item.model}</p>
+                            <p>Cantidad: {item.quantity} </p>
+                            <p>Precio: {item.price} </p>
+                        </div>
+                    
+                    )
 
 
                 // <p>{props.order[0].model}</p>

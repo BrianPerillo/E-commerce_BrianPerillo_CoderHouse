@@ -17,7 +17,7 @@ const Order = (props) => {
                     
                 querySnapshot.forEach((doc) => {
 
-                if(doc.id == 'BBQrlZ0x0aOgOXoGa9IT' ){
+                if(doc.id == 'BdfhN4iOQHF0b08UsAr9' ){
                     console.log("HOLA");
                     console.log(doc.data().order);
                     setOrder(doc.data().order)

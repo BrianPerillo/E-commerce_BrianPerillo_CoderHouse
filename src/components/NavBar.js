@@ -46,10 +46,9 @@ const NavBar = (props) => {
                                     </ul>
                                 </li></NavLink>
                             </ul>
-
-
                         
                         </div>
+
 
                         <div id="cart" className="col-md-2"> 
                             <NavLink to={`/cart`}>
