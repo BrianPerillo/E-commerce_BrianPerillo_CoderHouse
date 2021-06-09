@@ -8,6 +8,7 @@ import {CartProvider} from './context/CartContext';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
+import Order from './components/Order';
 import {db} from './firebase';
 
 function App() {
@@ -97,6 +98,11 @@ function App() {
       <Route path="/cart">
           <NavBar/>
           <Cart/>
+      </Route>
+
+      <Route path="/orders">
+          <NavBar/>
+          <Order/>
       </Route>
       
       <Route path="/category/:id">
