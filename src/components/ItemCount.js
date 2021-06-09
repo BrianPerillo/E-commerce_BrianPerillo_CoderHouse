@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 
 const ItemCount = (props) => {
     
@@ -23,7 +23,8 @@ const ItemCount = (props) => {
     }
 
     const handleOnClick = (e) => {
-        props.onAdd(quantity, props.item);
+        // props.onAdd(quantity, props.item);
+        props.isInCart(quantity, props.item)
     }
 
 

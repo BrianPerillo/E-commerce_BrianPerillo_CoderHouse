@@ -1,7 +1,8 @@
-import React, {Fragment, useState ,useEffect, useContext} from 'react';
-import ItemCount from './ItemCount'
-import {CartContext} from '../context/CartContext';
 import {Link, NavLink} from 'react-router-dom';
+import React, {Fragment, useContext, useEffect, useState} from 'react';
+
+import {CartContext} from '../context/CartContext';
+import ItemCount from './ItemCount'
 
 const ItemDetail = (props) => {
 
@@ -53,7 +54,7 @@ const ItemDetail = (props) => {
                         <div style={{width:"35%"}}>
                             {/* Cargo el ItemCount (hijo de este comp) y además: */}
                             {/* le paso función onAdd al hijo ItemCount, para tener el dato de quantity en este Comp padre */}
-                            <ItemCount stock={props.item.stock} item={props.item} onAdd={cartContext.addCart}/>  {/* Paso funcion addToCart que viene desde el context*/} 
+                            <ItemCount stock={props.item.stock} item={props.item} onAdd={cartContext.addCart} isInCart={cartContext.isInCart}/>  {/* Paso funcion addToCart que viene desde el context*/} 
                         </div>
 
                     :

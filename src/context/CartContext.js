@@ -7,29 +7,56 @@ export const CartProvider = ({children}) => {  //Creo proveedor que recive datos
   const [cart, setCart] = useState([])
   const [itemRemove, setItemRemove] = useState({})
   const [quantity, setQuantity] = useState(0)
-  const [lastOrderId, setLastOrderId] = useState()
+  // const [isInCartBool, setIsInCartBool] = useState(false)
 
 
   const addCart = (quantity_recibida, item) => {
-    item.quantity = quantity_recibida;
-    setCart([...cart, item]) 
-    console.log("carrito " + cart)
+    
+      item.quantity = quantity_recibida;
+      setCart([...cart, item]) 
+      console.log("carrito " + cart)
+
   }
 
+  const isInCart = (quantity_recibida, item) => {
+    
+    if(cart.length>0){
+
+      cart.map((cart_item) => {
+      
+        console.log("ID CART " + cart_item.id); 
+        console.log("ID CART " + item.id);
+  
+        if(cart_item.id == item.id){
+  
+          cart_item.quantity = cart_item.quantity + quantity_recibida
+  
+        }
+        else{
+  
+          addCart(quantity_recibida, item);
+  
+        }
+  
+        
+  
+      })
+    }
+
+    else{
+      addCart(quantity_recibida, item);
+    }
+
+
+  
+
+  }
   
   const removeCart = () => {
 
         setCart([]);
 
 }
-
-  
-  const orderId = (orderId) => {
-
-    setLastOrderId(orderId);
-    // console.log("id desde context" + lastOrderId);
-
-  }
 
   const removeFromCart = (itemId) => {
 
@@ -70,7 +97,7 @@ export const CartProvider = ({children}) => {  //Creo proveedor que recive datos
 
   return (
 
-    <CartContext.Provider value={{cart, addCart, removeFromCart, removeCart, orderId, quantity}}>
+    <CartContext.Provider value={{cart, addCart, removeFromCart, removeCart, isInCart, quantity}}>
       {children}
     </CartContext.Provider>
 
